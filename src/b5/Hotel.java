@@ -30,11 +30,11 @@ public class Hotel {
     }
 
     public int calculator(String passport) {
-//        Person person = this.persons.stream().filter(p -> p.getPassport().equals(passport)).findFirst().orElse(null);
-//        if (person == null) {
-//            return 0;
-//        }
-        Person person=new Person();
+        Person person = this.persons.stream().filter(p -> p.getPassport().equals(passport)).findFirst().orElse(null);
+        if (person == null) {
+            return 0;
+        }
+//        Person person=new Person();
         int inDexOf = search(passport);
         if(inDexOf==-1){
             System.out.println("Ko co id ");
@@ -43,7 +43,9 @@ public class Hotel {
     }
 
     public void show() {
-        this.persons.forEach(p -> System.out.println(p.toString()));
+        for (int i = 0; i < persons.size() ; i++) {
+            System.out.println(persons.get(i));
+        }
     }
     public int search(String passport){
         for (int i = 0; i < persons.size() ; i++) {
